@@ -14,13 +14,13 @@ class MockContainerFactory {
 
     // MARK: - Managers
 
-
     // MARK: - Modules
-
+    private lazy var productListAssembly: ProductListModule.ModuleAssembly = .init()
 
     // MARK: - Services
+    private lazy var productService: ProductService = MockProductService()
+    private lazy var reviewService: ReviewService = MockReviewService()
 
-    
     func build() -> Container {
         let container = Container()
 
@@ -30,12 +30,12 @@ class MockContainerFactory {
 
         // MARK: - Managers
 
-
         // MARK: - Modules
-
+        container.register { [productListAssembly] () -> ProductListModule.ModuleAssemblying in productListAssembly }
 
         // MARK: - Services
-
+        container.register { [productService] () -> ProductService in productService }
+        container.register { [reviewService] () -> ReviewService in reviewService }
 
         return container
     }

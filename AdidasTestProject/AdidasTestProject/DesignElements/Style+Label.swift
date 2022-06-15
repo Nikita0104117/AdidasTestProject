@@ -8,5 +8,7 @@
 import UIKit
 
 extension Style.Label {
-//    static let headerTitle = ColoredLabel(titleColor: AppColors.black.color, font: Style.Font.systemBold16)
+    static let titleLabel = ColoredLabel(titleColor: AppColors.black.color, font: Style.Font.systemBold16)
+    static let subTitleLabel = ColoredLabel(titleColor: AppColors.black.color, font: Style.Font.system10)
+    static let priceTitleLabel = ColoredLabel(titleColor: AppColors.black.color, font: Style.Font.systemBold14)
 }

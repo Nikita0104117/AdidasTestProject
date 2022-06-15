@@ -8,10 +8,15 @@
 import Macaroni
 
 class RestContainerFactory {
-    let baseURL: String
+    let baseProductURL: String
+    let baseReviewURL: String
 
-    init(baseURL: String) {
-        self.baseURL = baseURL
+    init(
+        baseProductURL: String,
+        baseReviewURL: String
+    ) {
+        self.baseProductURL = baseProductURL
+        self.baseReviewURL = baseReviewURL
     }
 
     // MARK: - Storages
@@ -20,14 +25,16 @@ class RestContainerFactory {
 
     // MARK: - Managers
 
-
     // MARK: - Modules
-
+    private lazy var productListAssembly: ProductListModule.ModuleAssembly = .init()
 
     // MARK: - Session
-    private lazy var restClient = RestClient(baseURL: baseURL)
+    private lazy var restProductClient = RestClient(baseURL: baseProductURL)
+    private lazy var restReviewClient = RestClient(baseURL: baseReviewURL)
 
     // MARK: - Services
+    private lazy var productService: ProductService = RestProductService(restClient: restProductClient)
+    private lazy var reviewService: ReviewService = RestReviewService(restClient: restReviewClient)
 
     func build() -> Container {
         let container = Container()
@@ -38,12 +45,12 @@ class RestContainerFactory {
 
         // MARK: - Managers
 
-
         // MARK: - Modules
-
+        container.register { [productListAssembly] () -> ProductListModule.ModuleAssemblying in productListAssembly }
 
         // MARK: - Services
-
+        container.register { [productService] () -> ProductService in productService }
+        container.register { [reviewService] () -> ReviewService in reviewService }
 
         return container
     }

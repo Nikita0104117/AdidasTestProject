@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Macaroni
 
 private typealias Module = ProductListModule
 
 extension Module {
     final class ModuleAssembly: ModuleAssemblying {
+        @Injected var productService: ProductService!
+
         func assemble() -> UIViewController {
             let controller: Controller = .init()
             let view: View = .init()
             let presenter: Presenter = .init()
-            let interactor: Interactor = .init()
+            let interactor: Interactor = .init(productService: productService)
             let router: Router = .init()
 
             controller.output = presenter

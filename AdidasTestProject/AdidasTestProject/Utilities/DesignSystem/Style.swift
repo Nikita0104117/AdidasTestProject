@@ -52,8 +52,10 @@ enum Style {
             }
         }
 
-        static let defaultHorizontalStack = DefaulStack(spacing: 0, axis: .horizontal)
-        static let defaultVerticalStack = DefaulStack(spacing: 0, axis: .vertical)
+        static let defaultHorizontalStack0 = DefaulStack(spacing: 0, axis: .horizontal)
+        static let defaultVerticalStack0 = DefaulStack(spacing: 0, axis: .vertical)
+        static let defaultHorizontalStack8 = DefaulStack(spacing: 8, axis: .horizontal)
+        static let defaultVerticalStack8 = DefaulStack(spacing: 8, axis: .vertical)
     }
 
     enum TextField {
@@ -71,6 +73,19 @@ enum Style {
                     object.layer.borderColor = borderColor.cgColor
                     object.layer.borderWidth = 1
                 }
+            }
+        }
+    }
+
+    enum ImageView {
+        struct ImageView: Applicable {
+            let contentMode: UIView.ContentMode
+            let cornerRadius: CGFloat
+
+            func apply(_ object: UIImageView) {
+                object.contentMode = contentMode
+                object.layer.cornerRadius = cornerRadius
+                object.layer.masksToBounds = true
             }
         }
     }
@@ -151,5 +166,10 @@ enum Style {
     enum Margins {
         static let defaultInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         static let zeroInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    enum CornerRadius {
+        static let `default` = 10.0
+        static let normal = 20.0
     }
 }

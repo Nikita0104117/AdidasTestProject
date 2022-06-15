@@ -6,11 +6,29 @@
 //
 
 import UIKit
+import Macaroni
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        #if PROD
+        Container.policy = .singleton(
+            RestContainerFactory(
+                baseProductURL: ApiURLsPath.baseProductUrl.rawValue,
+                baseReviewURL: ApiURLsPath.baseReviewUrl.rawValue
+            ).build()
+        )
+        #elseif STAGE
+        Container.policy = .singleton(
+            RestContainerFactory(
+                baseProductURL: ApiURLsPath.baseProductUrl.rawValue,
+                baseReviewURL: ApiURLsPath.baseReviewUrl.rawValue
+            ).build()
+        )
+        #else
+        Container.policy = .singleton(MockContainerFactory().build())
+        #endif
+
         return true
     }
 

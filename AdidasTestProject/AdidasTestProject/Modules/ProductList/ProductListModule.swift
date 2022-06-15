@@ -22,17 +22,32 @@ struct ProductListModule {
 protocol ProductListAssemblyProtocol: BaseAssemblyProtocol { }
 
 // MARK: - Controller
-protocol ProductListControllerInputProtocol: BaseControllerInput { }
+protocol ProductListControllerInputProtocol: BaseControllerInput {
+    func reloadData()
+}
 
-protocol ProductListControllerOutputProtocol: BaseControllerOutput { }
+protocol ProductListControllerOutputProtocol: BaseControllerOutput {
+    var numberOfRows: Int { get }
+
+    func getProduct(_ index: Int) -> ProductEntity
+    func searchProduct(_ searchText: String)
+}
 
 // MARK: - View
-protocol ProductListViewOutputProtocol { }
+protocol ProductListViewOutputProtocol {
+    var productTableView: UITableView { get }
+}
 
 // MARK: - Interactor
-protocol ProductListInteractorInputProtocol { }
+protocol ProductListInteractorInputProtocol {
+    func getProducts()
+}
 
-protocol ProductListInteractorOutputProtocol: AnyObject { }
+protocol ProductListInteractorOutputProtocol: AnyObject {
+    func successGetProducts(_ products: [ProductEntity])
+    func offlineMode()
+    func failure(error: String)
+}
 
 // MARK: - Router
 protocol ProductListRouterInputProtocol { }

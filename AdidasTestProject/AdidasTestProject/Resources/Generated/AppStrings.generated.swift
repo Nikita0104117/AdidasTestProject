@@ -19,6 +19,16 @@ public enum AppLocale {
 
     public static var currentLanguageCode: String = "en"
 
+
+  public enum General {
+      /// Offline mode
+      public static let offlinemode: String = AppLocale.tr("Localize", "general.offlinemode")
+  }
+
+  public enum ProductList {
+      /// Product List
+      public static let title: String = AppLocale.tr("Localize", "productList.title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+extension Style {
+    enum SystemImages {
+        static let defaulProductImage = UIImage(systemName: "bag.fill")
+    }
+}

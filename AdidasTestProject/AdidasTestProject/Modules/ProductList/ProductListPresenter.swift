@@ -19,12 +19,63 @@ extension Module {
         var interactor: InteractorInput!
         var router: RouterInput!
 
+        var originDataSource: [ProductEntity] = [] {
+            didSet {
+                dataSource = originDataSource
+            }
+        }
+
+        var dataSource: [ProductEntity] = [] {
+            didSet {
+                controller?.reloadData()
+            }
+        }
+
         required init() { }
     }
 }
 
 private extension Presenter { }
 
-extension Presenter: Module.ControllerOutput { }
+extension Presenter: Module.ControllerOutput {
+    func didAppear() {
+        controller?.showActivity()
+        interactor?.getProducts()
+    }
 
-extension Presenter: Module.InteractorOutput { }
+    var numberOfRows: Int {
+        dataSource.count
+    }
+
+    func getProduct(_ index: Int) -> ProductEntity {
+        dataSource[index]
+    }
+
+    func searchProduct(_ searchText: String) {
+        if searchText.isEmpty {
+            dataSource = originDataSource
+            return
+        }
+
+        dataSource = originDataSource.filter {
+            $0.name?.lowercased().contains(searchText.lowercased()) ?? false
+            || $0.descriptionText?.lowercased().contains(searchText.lowercased()) ?? false
+        }
+    }
+}
+
+extension Presenter: Module.InteractorOutput {
+    func offlineMode() {
+        controller?.showNetworking(info: AppLocale.General.offlinemode)
+    }
+
+    func successGetProducts(_ products: [ProductEntity]) {
+        controller?.hideActivity()
+        originDataSource = products
+    }
+
+    func failure(error: String) {
+        controller?.hideActivity()
+        controller?.showNetworking(error: error)
+    }
+}
