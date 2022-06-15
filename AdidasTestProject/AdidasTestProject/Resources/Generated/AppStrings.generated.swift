@@ -23,6 +23,8 @@ public enum AppLocale {
   public enum General {
       /// Offline mode
       public static let offlinemode: String = AppLocale.tr("Localize", "general.offlinemode")
+      /// Success!
+      public static let success: String = AppLocale.tr("Localize", "general.success")
   }
 
   public enum ProductList {

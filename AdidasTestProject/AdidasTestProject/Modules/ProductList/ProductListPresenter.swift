@@ -38,6 +38,11 @@ extension Module {
 private extension Presenter { }
 
 extension Presenter: Module.ControllerOutput {
+    func rightBarItemTap() {
+        controller?.showActivity()
+        interactor?.saveAllToDB()
+    }
+
     func didAppear() {
         controller?.showActivity()
         interactor?.getProducts()
@@ -65,7 +70,13 @@ extension Presenter: Module.ControllerOutput {
 }
 
 extension Presenter: Module.InteractorOutput {
+    func success() {
+        controller?.hideActivity()
+        controller?.showNetworking(info: AppLocale.General.success)
+    }
+
     func offlineMode() {
+        controller?.hideActivity()
         controller?.showNetworking(info: AppLocale.General.offlinemode)
     }
 

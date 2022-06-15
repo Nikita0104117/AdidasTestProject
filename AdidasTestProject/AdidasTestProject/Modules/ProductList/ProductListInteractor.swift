@@ -16,9 +16,11 @@ extension Module {
         // MARK: - Dependencies
         weak var output: InteractorOutput?
 
+        let dataBaseManager: DBProtocol
         let productService: ProductService
 
-        required init(productService: ProductService) {
+        required init(dataBaseManager: DBProtocol, productService: ProductService) {
+            self.dataBaseManager = dataBaseManager
             self.productService = productService
         }
     }
@@ -26,12 +28,11 @@ extension Module {
 
 extension Interactor {
     private func saveProductToDB(_ products: [ProductEntity]) {
-        let products: [DBProductModel] = products.map { .init($0) }
-        DBProductModel.realm.addOrUpdate(object: products)
+        dataBaseManager.saveProductsToDB(products: products)
     }
 
     private func getProductsFromDB() {
-        DBProductModel.realm.fetchWith { [weak self] data in
+        dataBaseManager.getProductsFromDB { [weak self] data in
             self?.output?.successGetProducts(Array(data))
         }
     }
@@ -42,6 +43,17 @@ extension Interactor {
 }
 
 extension Interactor: Module.InteractorInput {
+    func saveAllToDB() {
+        if !isConnectedToInternet {
+            output?.offlineMode()
+            return
+        }
+
+        dataBaseManager.downloadAllDataAndSave { [weak self] in
+            self?.output?.success()
+        }
+    }
+
     func getProducts() {
         if !isConnectedToInternet {
             output?.offlineMode()

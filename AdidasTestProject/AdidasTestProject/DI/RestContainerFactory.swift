@@ -24,6 +24,7 @@ class RestContainerFactory {
     private lazy var keychainStore = KeychainStore()
 
     // MARK: - Managers
+    private lazy var dataBaseManager: DataBaseManager = .init(productService: productService, reviewService: reviewService)
 
     // MARK: - Modules
     private lazy var productListAssembly: ProductListModule.ModuleAssembly = .init()
@@ -44,6 +45,7 @@ class RestContainerFactory {
         container.register { [keychainStore] () -> StoreProtocol in keychainStore }
 
         // MARK: - Managers
+        container.register { [dataBaseManager] () -> DBProtocol in dataBaseManager }
 
         // MARK: - Modules
         container.register { [productListAssembly] () -> ProductListModule.ModuleAssemblying in productListAssembly }

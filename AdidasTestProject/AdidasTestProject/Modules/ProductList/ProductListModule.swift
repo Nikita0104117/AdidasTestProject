@@ -31,6 +31,8 @@ protocol ProductListControllerOutputProtocol: BaseControllerOutput {
 
     func getProduct(_ index: Int) -> ProductEntity
     func searchProduct(_ searchText: String)
+
+    func rightBarItemTap()
 }
 
 // MARK: - View
@@ -41,12 +43,14 @@ protocol ProductListViewOutputProtocol {
 // MARK: - Interactor
 protocol ProductListInteractorInputProtocol {
     func getProducts()
+    func saveAllToDB()
 }
 
 protocol ProductListInteractorOutputProtocol: AnyObject {
     func successGetProducts(_ products: [ProductEntity])
     func offlineMode()
     func failure(error: String)
+    func success()
 }
 
 // MARK: - Router

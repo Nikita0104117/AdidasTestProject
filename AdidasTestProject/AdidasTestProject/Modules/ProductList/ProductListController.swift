@@ -24,6 +24,13 @@ extension Module {
             $0.searchResultsUpdater = self
         }
 
+        private lazy var rightBarItem: UIBarButtonItem = build(
+            .init(title: "Save All to DB", style: .plain, target: self, action: #selector(rightBarItemTap))
+
+        ) {
+            $0.tintColor = AppColors.blue.color
+        }
+
         // MARK: - Init
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
@@ -76,6 +83,11 @@ private extension Controller {
     private func navigationCommonSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        navigationItem.rightBarButtonItem = rightBarItem
+    }
+
+    @objc private func rightBarItemTap() {
+        output?.rightBarItemTap()
     }
 
     // MARK: - Setup Delegates

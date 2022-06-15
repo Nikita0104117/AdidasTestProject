@@ -84,6 +84,8 @@
 		B404F4A4285A7383008DCAE5 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4A3285A7383008DCAE5 /* RealmManager.swift */; };
 		B404F4A6285A7722008DCAE5 /* RealmThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4A5285A7722008DCAE5 /* RealmThread.swift */; };
 		B404F4A9285A7D1B008DCAE5 /* DBProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4A8285A7D1B008DCAE5 /* DBProductModel.swift */; };
+		B404F4AB285A9095008DCAE5 /* GlobalDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4AA285A9095008DCAE5 /* GlobalDataBaseManager.swift */; };
+		B404F4AD285A93BF008DCAE5 /* DBReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4AC285A93BF008DCAE5 /* DBReviewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		B404F4A3285A7383008DCAE5 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		B404F4A5285A7722008DCAE5 /* RealmThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmThread.swift; sourceTree = "<group>"; };
 		B404F4A8285A7D1B008DCAE5 /* DBProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProductModel.swift; sourceTree = "<group>"; };
+		B404F4AA285A9095008DCAE5 /* GlobalDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDataBaseManager.swift; sourceTree = "<group>"; };
+		B404F4AC285A93BF008DCAE5 /* DBReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReviewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +459,7 @@
 		B404F43C2859EF2E008DCAE5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B404F4AE285A9E3B008DCAE5 /* ProductDetail */,
 				B404F464285A0EB3008DCAE5 /* ProductList */,
 			);
 			path = Modules;
@@ -564,6 +569,7 @@
 		B404F4A2285A7321008DCAE5 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				B404F4AA285A9095008DCAE5 /* GlobalDataBaseManager.swift */,
 				B404F4A7285A7A53008DCAE5 /* Models */,
 				B404F4A3285A7383008DCAE5 /* RealmManager.swift */,
 				B404F4A5285A7722008DCAE5 /* RealmThread.swift */,
@@ -575,8 +581,16 @@
 			isa = PBXGroup;
 			children = (
 				B404F4A8285A7D1B008DCAE5 /* DBProductModel.swift */,
+				B404F4AC285A93BF008DCAE5 /* DBReviewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B404F4AE285A9E3B008DCAE5 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -791,6 +805,7 @@
 				B404F4222859EB5B008DCAE5 /* Build.swift in Sources */,
 				B404F4372859EB5B008DCAE5 /* BaseAssemblyProtocol.swift in Sources */,
 				B404F4232859EB5B008DCAE5 /* UIStackView+Extension.swift in Sources */,
+				B404F4AD285A93BF008DCAE5 /* DBReviewModel.swift in Sources */,
 				B404F489285A260C008DCAE5 /* RestProductService.swift in Sources */,
 				B404F3E02859EA4F008DCAE5 /* MockContainerFactory.swift in Sources */,
 				B404F46D285A0ED1008DCAE5 /* ProductListPresenter.swift in Sources */,
@@ -814,6 +829,7 @@
 				B404F4332859EB5B008DCAE5 /* NetworkingSession.swift in Sources */,
 				B404F41E2859EB5B008DCAE5 /* Style+Label.swift in Sources */,
 				B404F488285A260C008DCAE5 /* MockProductService.swift in Sources */,
+				B404F4AB285A9095008DCAE5 /* GlobalDataBaseManager.swift in Sources */,
 				B404F42F2859EB5B008DCAE5 /* NetworkingTokenManager.swift in Sources */,
 				B404F41D2859EB5B008DCAE5 /* Style+Button.swift in Sources */,
 				B404F41F2859EB5B008DCAE5 /* Style+Font.swift in Sources */,
