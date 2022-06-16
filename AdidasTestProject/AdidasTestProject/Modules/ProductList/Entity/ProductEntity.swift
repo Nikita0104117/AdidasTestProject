@@ -21,10 +21,3 @@ extension ProductEntity {
         "\(String(format: "%.2f", price ?? 0.0))\(currency ?? "")"
     }
 }
-
-protocol ReviewEntity {
-    var productId: String? { get set }
-    var locale: String? { get set }
-    var rating: Int? { get set }
-    var text: String? { get set }
-}

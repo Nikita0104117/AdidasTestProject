@@ -30,15 +30,15 @@ class ProductTableViewCell: UITableViewCell {
     }
 
     private lazy var titleLabel: UILabel = build {
-        $0 <~ Style.Label.titleLabel
+        $0 <~ Style.Label.titleLabel16
     }
 
     private lazy var subTitleLabel: UILabel = build {
-        $0 <~ Style.Label.subTitleLabel
+        $0 <~ Style.Label.subTitleLabel10
     }
 
     private lazy var priceLabel: UILabel = build {
-        $0 <~ Style.Label.priceTitleLabel
+        $0 <~ Style.Label.priceTitleLabel14
         $0.textAlignment = .right
     }
 

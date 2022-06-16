@@ -9,7 +9,7 @@ import Foundation
 
 protocol DBProtocol {
     func saveProductsToDB(products: [ProductEntity])
-    func saveReviewsToDB(reviews: [ReviewEntity])
+    func saveReviewsToDB(reviews: [ReviewEntity], productId: String?)
     func getProductsFromDB(completion: @escaping ([ProductEntity]) -> Void)
     func getReviewsFromDB(productId: String, completion: @escaping ([ReviewEntity]) -> Void)
     func downloadAllDataAndSave(completion: @escaping () -> Void)
@@ -28,7 +28,7 @@ class DataBaseManager: DBProtocol {
         reviewService.getReviews(productId: productId) { [weak self] result in
             switch result {
                 case .success(let data):
-                    self?.saveReviewsToDB(reviews: data)
+                    self?.saveReviewsToDB(reviews: data, productId: productId)
                     completion()
                 case .failure:
                     break
@@ -53,9 +53,14 @@ class DataBaseManager: DBProtocol {
         DBProductModel.realm.addOrUpdate(object: products)
     }
 
-    public func saveReviewsToDB(reviews: [ReviewEntity]) {
+    public func saveReviewsToDB(reviews: [ReviewEntity], productId: String?) {
+        guard let productId = productId else { return }
+
         let reviews: [DBReviewModel] = reviews.map { .init($0) }
-        DBReviewModel.realm.addOrUpdate(object: reviews)
+        DBReviewModel.realm.deleteWithObject(nil, condition: "productId == '\(productId)'") { _ in
+            DBReviewModel.realm.addOrUpdate(object: reviews)
+        }
+
     }
 
     public func getProductsFromDB(completion: @escaping ([ProductEntity]) -> Void) {
@@ -65,7 +70,7 @@ class DataBaseManager: DBProtocol {
     }
 
     public func getReviewsFromDB(productId: String, completion: @escaping ([ReviewEntity]) -> Void) {
-        DBReviewModel.realm.fetchWith(condition: "productId == \(productId)") { data in
+        DBReviewModel.realm.fetchWith(condition: "productId == '\(productId)'") { data in
             completion(Array(data))
         }
     }

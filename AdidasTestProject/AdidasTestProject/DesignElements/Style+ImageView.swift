@@ -7,4 +7,5 @@
 
 extension Style.ImageView {
     static let imageViewWithNormalCornerRadius: ImageView = .init(contentMode: .scaleAspectFit, cornerRadius: Style.CornerRadius.normal)
+    static let imageViewWithDefaultCornerRadius: ImageView = .init(contentMode: .scaleAspectFit, cornerRadius: Style.CornerRadius.default)
 }

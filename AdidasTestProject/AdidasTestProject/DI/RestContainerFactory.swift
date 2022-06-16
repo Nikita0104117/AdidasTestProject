@@ -28,6 +28,7 @@ class RestContainerFactory {
 
     // MARK: - Modules
     private lazy var productListAssembly: ProductListModule.ModuleAssembly = .init()
+    private lazy var productDetailAssembly: ProductDetailModule.ModuleAssembly = .init()
 
     // MARK: - Session
     private lazy var restProductClient = RestClient(baseURL: baseProductURL)
@@ -49,6 +50,7 @@ class RestContainerFactory {
 
         // MARK: - Modules
         container.register { [productListAssembly] () -> ProductListModule.ModuleAssemblying in productListAssembly }
+        container.register { [productDetailAssembly] () -> ProductDetailModule.ModuleAssemblying in productDetailAssembly }
 
         // MARK: - Services
         container.register { [productService] () -> ProductService in productService }

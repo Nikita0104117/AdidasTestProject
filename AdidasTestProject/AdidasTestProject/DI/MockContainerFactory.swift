@@ -13,9 +13,11 @@ class MockContainerFactory {
     private lazy var keychainStore = KeychainStore()
 
     // MARK: - Managers
+    private lazy var dataBaseManager: DataBaseManager = .init(productService: productService, reviewService: reviewService)
 
     // MARK: - Modules
     private lazy var productListAssembly: ProductListModule.ModuleAssembly = .init()
+    private lazy var productDetailAssembly: ProductDetailModule.ModuleAssembly = .init()
 
     // MARK: - Services
     private lazy var productService: ProductService = MockProductService()
@@ -29,9 +31,11 @@ class MockContainerFactory {
         container.register { [keychainStore] () -> StoreProtocol in keychainStore }
 
         // MARK: - Managers
+        container.register { [dataBaseManager] () -> DBProtocol in dataBaseManager }
 
         // MARK: - Modules
         container.register { [productListAssembly] () -> ProductListModule.ModuleAssemblying in productListAssembly }
+        container.register { [productDetailAssembly] () -> ProductDetailModule.ModuleAssemblying in productDetailAssembly }
 
         // MARK: - Services
         container.register { [productService] () -> ProductService in productService }

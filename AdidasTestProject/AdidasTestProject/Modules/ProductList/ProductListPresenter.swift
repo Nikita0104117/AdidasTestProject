@@ -38,12 +38,17 @@ extension Module {
 private extension Presenter { }
 
 extension Presenter: Module.ControllerOutput {
+    func selectedProduct(_ index: Int) {
+        let product = dataSource[index]
+        router.goToDetailScreen(with: product)
+    }
+
     func rightBarItemTap() {
         controller?.showActivity()
         interactor?.saveAllToDB()
     }
 
-    func didAppear() {
+    func didLoad() {
         controller?.showActivity()
         interactor?.getProducts()
     }

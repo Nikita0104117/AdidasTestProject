@@ -30,6 +30,7 @@ protocol ProductListControllerOutputProtocol: BaseControllerOutput {
     var numberOfRows: Int { get }
 
     func getProduct(_ index: Int) -> ProductEntity
+    func selectedProduct(_ index: Int)
     func searchProduct(_ searchText: String)
 
     func rightBarItemTap()
@@ -54,4 +55,6 @@ protocol ProductListInteractorOutputProtocol: AnyObject {
 }
 
 // MARK: - Router
-protocol ProductListRouterInputProtocol { }
+protocol ProductListRouterInputProtocol {
+    func goToDetailScreen(with product: ProductEntity)
+}

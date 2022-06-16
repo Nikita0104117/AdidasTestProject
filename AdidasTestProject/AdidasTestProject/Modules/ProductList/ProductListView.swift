@@ -17,7 +17,6 @@ extension Module {
         // MARK: - UI Elements
         private(set) lazy var productTableView: UITableView = build(.init(frame: .zero, style: .plain)) {
             $0.separatorStyle = .none
-            $0.allowsSelection = false
 
             $0.register(ProductTableViewCell.self)
         }

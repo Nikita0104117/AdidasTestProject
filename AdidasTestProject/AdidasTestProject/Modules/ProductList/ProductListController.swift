@@ -126,7 +126,12 @@ extension Controller: UITableViewDataSource {
     }
 }
 
-extension Controller: UITableViewDelegate { }
+extension Controller: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+        output?.selectedProduct(indexPath.item)
+    }
+}
 
 extension Controller: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {

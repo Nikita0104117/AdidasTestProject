@@ -7,6 +7,7 @@
 
 import UIKit
 import Macaroni
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
         Container.policy = .singleton(MockContainerFactory().build())
         #endif
+
+        IQKeyboardManager.shared.enable = true
 
         return true
     }
