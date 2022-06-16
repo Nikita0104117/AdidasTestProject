@@ -1,6 +1,6 @@
 //
 //  BaseAssemblyProtocol.swift
-//  
+//
 //
 //  Created by Nikita Omelchenko
 //

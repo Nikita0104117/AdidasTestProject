@@ -33,7 +33,7 @@ extension BaseControllerInput where Self: UIViewController {
 
     func showActivity() {
         DispatchQueue.main.async {
-            NetworkingActivity.show(viewController: self, color: .black, type: .circleStrokeSpin)
+            NetworkingActivity.show(viewController: self, color: AppColors.blue.color, type: .circleStrokeSpin)
         }
     }
 

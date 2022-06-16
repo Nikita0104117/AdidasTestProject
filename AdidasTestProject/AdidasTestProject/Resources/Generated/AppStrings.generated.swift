@@ -19,6 +19,33 @@ public enum AppLocale {
 
     public static var currentLanguageCode: String = "en"
 
+
+  public enum General {
+      /// Offline mode
+      public static let offlinemode: String = AppLocale.tr("Localize", "general.offlinemode")
+      /// Rating: 
+      public static let rating: String = AppLocale.tr("Localize", "general.rating")
+      /// Success!
+      public static let success: String = AppLocale.tr("Localize", "general.success")
+  }
+
+  public enum ProductDetail {
+      /// Send Review
+      public static let buttonTitle: String = AppLocale.tr("Localize", "productDetail.buttonTitle")
+      /// Feedbacks:
+      public static let feedbackList: String = AppLocale.tr("Localize", "productDetail.feedbackList")
+      /// Give us feedback
+      public static let giveFeedback: String = AppLocale.tr("Localize", "productDetail.giveFeedback")
+      /// Feedback text
+      public static let placholderReview: String = AppLocale.tr("Localize", "productDetail.placholderReview")
+      /// Product Detail
+      public static let title: String = AppLocale.tr("Localize", "productDetail.title")
+  }
+
+  public enum ProductList {
+      /// Product List
+      public static let title: String = AppLocale.tr("Localize", "productList.title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

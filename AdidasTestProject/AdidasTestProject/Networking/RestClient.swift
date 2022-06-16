@@ -2,8 +2,8 @@ import Foundation
 import Alamofire
 
 enum ApiURLsPath: String {
-    case baseProdUrl = "https://618d3aa7fe09aa001744060a.mockapi.io/api/"
-    case baseStageUrl = ""
+    case baseProductUrl = "http://localhost:3001/"
+    case baseReviewUrl = "http://localhost:3002/"
 }
 
 final class RestClient: NetworkingSession, InterceptorDelegate {
@@ -11,6 +11,10 @@ final class RestClient: NetworkingSession, InterceptorDelegate {
         super.init(baseURL: baseURL)
 
         self.interceptorDelegate = self
+    }
+
+    class func isConnectedToInternet() -> Bool {
+        NetworkReachabilityManager()?.isReachable ?? false
     }
 
     func retry(_ request: Request, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
@@ -30,3 +34,9 @@ extension TokenManager: OAuthAuthenticatorDelegate { }
 extension TokenManager.TokenRouter: NetworkingRouterProtocol {
     var path: Endpoint { "" }
 }
+
+// MARK: - Response Models
+enum ResponseModels { }
+
+// MARK: - Request Models
+enum RequestModels { }

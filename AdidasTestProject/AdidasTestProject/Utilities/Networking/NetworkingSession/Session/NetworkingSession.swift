@@ -14,10 +14,9 @@ class NetworkingSession: NetworkingSessionProtocol {
     private let eventMonitor: BaseEventMonitor = .init()
     private let requestInterceptor: BaseRequestInterceptor = .init()
 
-    private let rootQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier ?? "").rootQueue")
-    private let requestQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier ?? "").requestQueue")
-    private let serializationQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier ?? "").serializationQueue")
-
+    private let rootQueue: DispatchQueue
+    private let requestQueue: DispatchQueue
+    private let serializationQueue: DispatchQueue
     private let configuration: URLSessionConfiguration
 
     private let authenticator = OAuthAuthenticator()
@@ -55,6 +54,10 @@ class NetworkingSession: NetworkingSessionProtocol {
 
     init(baseURL: String) {
         self.baseURL = URL(string: baseURL)
+
+        self.rootQueue = DispatchQueue(label: "\(baseURL).\(Bundle.main.bundleIdentifier ?? "").rootQueue")
+        self.requestQueue = DispatchQueue(label: "\(baseURL).\(Bundle.main.bundleIdentifier ?? "").requestQueue")
+        self.serializationQueue = DispatchQueue(label: "\(baseURL).\(Bundle.main.bundleIdentifier ?? "").serializationQueue")
 
         self.configuration = URLSessionConfiguration.af.default
         self.configuration.timeoutIntervalForRequest = 30

@@ -19,12 +19,79 @@ extension Module {
         var interactor: InteractorInput!
         var router: RouterInput!
 
+        var originDataSource: [ProductEntity] = [] {
+            didSet {
+                dataSource = originDataSource
+            }
+        }
+
+        var dataSource: [ProductEntity] = [] {
+            didSet {
+                controller?.reloadData()
+            }
+        }
+
         required init() { }
     }
 }
 
 private extension Presenter { }
 
-extension Presenter: Module.ControllerOutput { }
+extension Presenter: Module.ControllerOutput {
+    func selectedProduct(_ index: Int) {
+        let product = dataSource[index]
+        router.goToDetailScreen(with: product)
+    }
 
-extension Presenter: Module.InteractorOutput { }
+    func rightBarItemTap() {
+        controller?.showActivity()
+        interactor?.saveAllToDB()
+    }
+
+    func didLoad() {
+        controller?.showActivity()
+        interactor?.getProducts()
+    }
+
+    var numberOfRows: Int {
+        dataSource.count
+    }
+
+    func getProduct(_ index: Int) -> ProductEntity {
+        dataSource[index]
+    }
+
+    func searchProduct(_ searchText: String) {
+        if searchText.isEmpty {
+            dataSource = originDataSource
+            return
+        }
+
+        dataSource = originDataSource.filter {
+            $0.name?.lowercased().contains(searchText.lowercased()) ?? false
+            || $0.descriptionText?.lowercased().contains(searchText.lowercased()) ?? false
+        }
+    }
+}
+
+extension Presenter: Module.InteractorOutput {
+    func success() {
+        controller?.hideActivity()
+        controller?.showNetworking(info: AppLocale.General.success)
+    }
+
+    func offlineMode() {
+        controller?.hideActivity()
+        controller?.showNetworking(info: AppLocale.General.offlinemode)
+    }
+
+    func successGetProducts(_ products: [ProductEntity]) {
+        controller?.hideActivity()
+        originDataSource = products
+    }
+
+    func failure(error: String) {
+        controller?.hideActivity()
+        controller?.showNetworking(error: error)
+    }
+}

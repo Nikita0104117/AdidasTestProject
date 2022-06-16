@@ -13,7 +13,14 @@ private typealias Module = ProductListModule
 private typealias View = Module.View
 
 extension Module {
-    final class View: UIView {
+    final class View: UIView, Module.ViewOutput {
+        // MARK: - UI Elements
+        private(set) lazy var productTableView: UITableView = build(.init(frame: .zero, style: .plain)) {
+            $0.separatorStyle = .none
+
+            $0.register(ProductTableViewCell.self)
+        }
+
         // MARK: - Init
         init() {
             super.init(frame: .zero)
@@ -27,11 +34,14 @@ extension Module {
 
 extension View {
     private func commonSetup() {
+        addSubview(productTableView)
+
         makeConstraints()
     }
 
     private func makeConstraints() {
+        productTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
-
-extension View: Module.ViewOutput { }

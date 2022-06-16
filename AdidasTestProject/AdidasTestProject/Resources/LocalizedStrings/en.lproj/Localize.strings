@@ -5,3 +5,14 @@
   Created by Nikita Omelchenko on 15.06.2022.
   
 */
+
+"general.offlinemode" = "Offline mode";
+"general.success" = "Success!";
+"general.rating" = "Rating: ";
+"productList.title" = "Product List";
+"productDetail.title" = "Product Detail";
+"productDetail.giveFeedback" = "Give us feedback";
+"productDetail.feedbackList" = "Feedbacks:";
+"productDetail.buttonTitle" = "Send Review";
+"productDetail.placholderReview" = "Feedback text";
+

@@ -24,18 +24,18 @@ final class NetworkingMassage {
         let defaultDuration = 0.24
 
         let stack: UIStackView = build {
-            $0 <~ Style.Stack.defaultVerticalStack
+            $0 <~ Style.Stack.defaultVerticalStack0
             $0.alpha = 0
         }
 
         let rootView = build {
-            $0.backgroundColor = style == .success ? .lightGray : .systemRed
+            $0.backgroundColor = style == .success ? AppColors.blue.color : AppColors.red.color
         }
 
         let textLabel: UILabel = build {
             $0.textColor = .black
             $0.numberOfLines = 0
-            $0.font = .systemFont(ofSize: 14)
+            $0.font = .systemFont(ofSize: 16)
             $0.text = text
         }
 
@@ -74,9 +74,9 @@ private extension UIApplication {
             // Keep only active scenes, onscreen and visible to the user
             .filter { $0.activationState == .foregroundActive }
             // Keep only the first `UIWindowScene`
-            .first(where: { $0 is UIWindowScene })
+            .first { $0 is UIWindowScene }
             // Get its associated windows
-            .flatMap({ $0 as? UIWindowScene })?.windows
+            .flatMap { $0 as? UIWindowScene }?.windows
             // Finally, keep only the key window
             .first(where: \.isKeyWindow)
     }

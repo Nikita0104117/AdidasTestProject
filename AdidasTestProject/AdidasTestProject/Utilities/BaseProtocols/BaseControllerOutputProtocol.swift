@@ -1,6 +1,6 @@
 //
 //  BaseControllerOutputProtocol.swift
-// 
+//
 //
 //  Created by Nikita Omelchenko
 //
