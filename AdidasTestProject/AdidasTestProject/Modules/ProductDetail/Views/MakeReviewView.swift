@@ -50,6 +50,9 @@ class MakeReviewView: UIView {
 
     private lazy var sendAction: UIAction = .init { _ in
         self.sendHandler?(self.ratingTextField.text, self.inputTextField.text)
+        self.ratingTextField.text = nil
+        self.inputTextField.text = nil
+        self.inputTextField.becomeFirstResponder()
     }
 
     private lazy var pickerView: UIPickerView = build {

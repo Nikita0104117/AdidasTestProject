@@ -50,10 +50,12 @@ extension Presenter: Module.ControllerOutput {
 
 extension Presenter: Module.InteractorOutput {
     func successSendReviews(_ review: ReviewEntity) {
-        reviews.append(review)
+        controller?.showNetworking(info: AppLocale.General.success)
+        reviews.insert(review, at: 0)
     }
 
     func successGetReviews(_ reviews: [ReviewEntity]) {
+        self.reviews = reviews
         controller?.reloadReviewData(reviews)
     }
 
