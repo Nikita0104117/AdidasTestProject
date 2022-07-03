@@ -813,7 +813,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -z \"$CI\" ]; then\n    if which swiftgen >/dev/null; then\n        swiftgen\n    else\n        echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\n    fi\nfi\n";
 		};
 		B404F4432859F00C008DCAE5 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
