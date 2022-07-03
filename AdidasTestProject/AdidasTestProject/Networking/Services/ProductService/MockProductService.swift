@@ -10,7 +10,7 @@ import Foundation
 
 struct MockProductService: ProductService {
     func getProducts(completion: @escaping (Result<[ProductEntity], Error>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             completion(.success(ResponseModels.ProductModel.mockData))
         }
     }

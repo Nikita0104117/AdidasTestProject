@@ -11,7 +11,7 @@
 		B404F39A2859E6C7008DCAE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F3992859E6C7008DCAE5 /* SceneDelegate.swift */; };
 		B404F3A12859E6CA008DCAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B404F3A02859E6CA008DCAE5 /* Assets.xcassets */; };
 		B404F3A42859E6CA008DCAE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B404F3A22859E6CA008DCAE5 /* LaunchScreen.storyboard */; };
-		B404F3AF2859E6CA008DCAE5 /* AdidasTestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F3AE2859E6CA008DCAE5 /* AdidasTestProjectTests.swift */; };
+		B404F3AF2859E6CA008DCAE5 /* ReviewServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F3AE2859E6CA008DCAE5 /* ReviewServiceTests.swift */; };
 		B404F3B92859E6CA008DCAE5 /* AdidasTestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F3B82859E6CA008DCAE5 /* AdidasTestProjectUITests.swift */; };
 		B404F3BB2859E6CA008DCAE5 /* AdidasTestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F3BA2859E6CA008DCAE5 /* AdidasTestProjectUITestsLaunchTests.swift */; };
 		B404F3C82859E7C5008DCAE5 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = B404F3C72859E7C5008DCAE5 /* swiftgen.yml */; };
@@ -97,6 +97,7 @@
 		B404F4C1285AC70D008DCAE5 /* MakeReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4C0285AC70D008DCAE5 /* MakeReviewView.swift */; };
 		B404F4C4285AD13E008DCAE5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B404F4C3285AD13D008DCAE5 /* IQKeyboardManagerSwift */; };
 		B404F4C7285AD3E9008DCAE5 /* ReviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4C6285AD3E9008DCAE5 /* ReviewEntity.swift */; };
+		B44518C528720BCF006F5F0D /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44518C428720BCF006F5F0D /* ProductServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +125,7 @@
 		B404F3A32859E6CA008DCAE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B404F3A52859E6CA008DCAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B404F3AA2859E6CA008DCAE5 /* AdidasTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdidasTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B404F3AE2859E6CA008DCAE5 /* AdidasTestProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidasTestProjectTests.swift; sourceTree = "<group>"; };
+		B404F3AE2859E6CA008DCAE5 /* ReviewServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewServiceTests.swift; sourceTree = "<group>"; };
 		B404F3B42859E6CA008DCAE5 /* AdidasTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdidasTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B404F3B82859E6CA008DCAE5 /* AdidasTestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidasTestProjectUITests.swift; sourceTree = "<group>"; };
 		B404F3BA2859E6CA008DCAE5 /* AdidasTestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdidasTestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 		B404F4BE285AB275008DCAE5 /* ReviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailView.swift; sourceTree = "<group>"; };
 		B404F4C0285AC70D008DCAE5 /* MakeReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewView.swift; sourceTree = "<group>"; };
 		B404F4C6285AD3E9008DCAE5 /* ReviewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewEntity.swift; sourceTree = "<group>"; };
+		B44518C428720BCF006F5F0D /* ProductServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,7 +279,8 @@
 		B404F3AD2859E6CA008DCAE5 /* AdidasTestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				B404F3AE2859E6CA008DCAE5 /* AdidasTestProjectTests.swift */,
+				B404F3AE2859E6CA008DCAE5 /* ReviewServiceTests.swift */,
+				B44518C428720BCF006F5F0D /* ProductServiceTests.swift */,
 			);
 			path = AdidasTestProjectTests;
 			sourceTree = "<group>";
@@ -917,7 +920,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B404F3AF2859E6CA008DCAE5 /* AdidasTestProjectTests.swift in Sources */,
+				B404F3AF2859E6CA008DCAE5 /* ReviewServiceTests.swift in Sources */,
+				B44518C528720BCF006F5F0D /* ProductServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1090,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1113,6 +1119,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1138,8 +1146,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1157,8 +1167,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1177,6 +1189,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;
@@ -1194,6 +1207,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;
@@ -1272,6 +1286,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1297,8 +1313,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1317,6 +1335,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;
@@ -1389,6 +1408,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1414,8 +1435,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1434,6 +1457,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;
@@ -1512,6 +1536,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1537,8 +1563,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1557,6 +1585,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;
@@ -1629,6 +1658,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
+				ENABLE_TESTABILITY = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AdidasTestProject/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1654,8 +1685,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
@@ -1674,6 +1707,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZAJ8QZ6FN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.AdidasTestProjectUITests;

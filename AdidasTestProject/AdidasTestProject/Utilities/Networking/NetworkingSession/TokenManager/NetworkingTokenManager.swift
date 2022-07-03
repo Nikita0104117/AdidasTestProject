@@ -48,7 +48,7 @@ final class TokenManager {
     }
 
     private func commonSetup() {
-        self.rest.authDelegate = self
+//        self.rest.authDelegate = self
         self.rest.authCredential = authCredential
     }
 
@@ -83,37 +83,37 @@ final class TokenManager {
     }
 
     public func refreshTokenRequest(refreshToken: String?, completion: @escaping (Result<AuthCredential, Error>) -> Void) {
-        guard
-            let refreshToken = refreshToken,
-            let isExpired = try? decode(jwt: refreshToken).expired,
-            !isExpired,
-            let request = rest.request(TokenRouter.refreshToken(.init(refreshToken: refreshToken)))
-        else {
-            completion(.failure(URLError(.cancelled)))
-            return
-        }
-
-        request.responseData { [weak self] response in
-            guard let self = self else { return }
-
-            switch response.result {
-                case .success(let data):
-                    guard
-                        let tokensModel: TokensModel = self.rest.objectfromData(data),
-                        let authCredential = self.configAuthCredential(tokensModel: tokensModel)
-                    else {
-                        completion(.failure(URLError(.badServerResponse)))
-                        return
-                    }
-
-                    completion(.success(authCredential))
-                    return
-
-                case .failure(let error):
-                    completion(.failure(error))
-                    return
-            }
-        }
+//        guard
+//            let refreshToken = refreshToken,
+//            let isExpired = try? decode(jwt: refreshToken).expired,
+//            !isExpired,
+//            let request = rest.request(TokenRouter.refreshToken(.init(refreshToken: refreshToken)) as? NetworkingRouterProtocol)
+//        else {
+//            completion(.failure(URLError(.cancelled)))
+//            return
+//        }
+//
+//        request.responseData { [weak self] response in
+//            guard let self = self else { return }
+//
+//            switch response.result {
+//                case .success(let data):
+//                    guard
+//                        let tokensModel: TokensModel = self.rest.objectfromData(data),
+//                        let authCredential = self.configAuthCredential(tokensModel: tokensModel)
+//                    else {
+//                        completion(.failure(URLError(.badServerResponse)))
+//                        return
+//                    }
+//
+//                    completion(.success(authCredential))
+//                    return
+//
+//                case .failure(let error):
+//                    completion(.failure(error))
+//                    return
+//            }
+//        }
     }
 }
 

@@ -10,19 +10,19 @@ import Foundation
 
 struct MockReviewService: ReviewService {
     func getReviews(productId: String, completion: @escaping (Result<[ReviewEntity], Error>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             completion(.success(ResponseModels.ReviewModel.mockData))
         }
     }
 
     func sendReview(review: RequestModels.ReviewModel, completion: @escaping (Result<Void, Error>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             completion(.success(()))
         }
     }
 }
 
-private extension ResponseModels.ReviewModel {
+extension ResponseModels.ReviewModel {
     static var mockData: [Self] {
         [
             .init(productId: "test1", locale: "en", rating: 3, text: "Test Review"),

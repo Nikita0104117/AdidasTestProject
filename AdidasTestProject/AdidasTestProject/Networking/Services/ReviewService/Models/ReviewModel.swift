@@ -24,3 +24,7 @@ extension RequestModels {
         var text: String?
     }
 }
+
+extension ResponseModels.ReviewModel: Equatable { }
+
+extension RequestModels.ReviewModel: Equatable { }

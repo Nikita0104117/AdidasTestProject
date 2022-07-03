@@ -49,8 +49,8 @@ class NetworkingSession: NetworkingSessionProtocol {
 
     public var sessionManager: Session
 
-    public var decoder: JSONDecoder = JSONDecoder()
-    public var encoder: JSONEncoder = JSONEncoder()
+    public private(set) var decoder: JSONDecoder = JSONDecoder()
+    public private(set) var encoder: JSONEncoder = JSONEncoder()
 
     init(baseURL: String) {
         self.baseURL = URL(string: baseURL)

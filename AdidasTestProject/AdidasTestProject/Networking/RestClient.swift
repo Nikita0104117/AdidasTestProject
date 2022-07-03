@@ -13,6 +13,12 @@ final class RestClient: NetworkingSession, InterceptorDelegate {
         self.interceptorDelegate = self
     }
 
+    override var encoder: JSONEncoder {
+        get {
+            return .init()
+        }
+    }
+
     class func isConnectedToInternet() -> Bool {
         NetworkReachabilityManager()?.isReachable ?? false
     }
@@ -27,13 +33,13 @@ protocol BaseRestService {
     var restClient: NetworkingSessionProtocol { get }
 }
 
-// MARK: - OAuth Authenticator Delegate
-extension TokenManager: OAuthAuthenticatorDelegate { }
-
-// MARK: - Token Manager Networking Router Protocol
-extension TokenManager.TokenRouter: NetworkingRouterProtocol {
-    var path: Endpoint { "" }
-}
+//// MARK: - OAuth Authenticator Delegate
+//extension TokenManager: OAuthAuthenticatorDelegate { }
+//
+//// MARK: - Token Manager Networking Router Protocol
+//extension TokenManager.TokenRouter: NetworkingRouterProtocol {
+//    var path: Endpoint { "" }
+//}
 
 // MARK: - Response Models
 enum ResponseModels { }

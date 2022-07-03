@@ -72,4 +72,3 @@ extension AppDelegate: MXMetricManagerSubscriber {
         debugPrint(firstPayload.dictionaryRepresentation())
     }
 }
-
