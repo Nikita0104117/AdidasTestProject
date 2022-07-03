@@ -98,6 +98,7 @@
 		B404F4C4285AD13E008DCAE5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B404F4C3285AD13D008DCAE5 /* IQKeyboardManagerSwift */; };
 		B404F4C7285AD3E9008DCAE5 /* ReviewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B404F4C6285AD3E9008DCAE5 /* ReviewEntity.swift */; };
 		B44518C528720BCF006F5F0D /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44518C428720BCF006F5F0D /* ProductServiceTests.swift */; };
+		B44518C828722053006F5F0D /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = B44518C728722053006F5F0D /* SwiftLintFramework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 				B404F3D42859E912008DCAE5 /* KeychainAccess in Frameworks */,
 				B404F3CB2859E841008DCAE5 /* NVActivityIndicatorView in Frameworks */,
 				B404F4562859FD9A008DCAE5 /* Kingfisher in Frameworks */,
+				B44518C828722053006F5F0D /* SwiftLintFramework in Frameworks */,
 				B404F3D12859E89A008DCAE5 /* Macaroni in Frameworks */,
 				B404F4C4285AD13E008DCAE5 /* IQKeyboardManagerSwift in Frameworks */,
 				B404F3DA2859E941008DCAE5 /* Alamofire in Frameworks */,
@@ -672,6 +674,7 @@
 				B404F4552859FD9A008DCAE5 /* Kingfisher */,
 				B404F4A0285A730F008DCAE5 /* RealmSwift */,
 				B404F4C3285AD13D008DCAE5 /* IQKeyboardManagerSwift */,
+				B44518C728722053006F5F0D /* SwiftLintFramework */,
 			);
 			productName = AdidasTestProject;
 			productReference = B404F3942859E6C7008DCAE5 /* AdidasTestProject.app */;
@@ -755,6 +758,7 @@
 				B404F4542859FD9A008DCAE5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B404F49F285A730F008DCAE5 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				B404F4C2285AD13D008DCAE5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				B44518C628722052006F5F0D /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = B404F3952859E6C7008DCAE5 /* Products */;
 			projectDirPath = "";
@@ -1849,6 +1853,14 @@
 				minimumVersion = 6.5.10;
 			};
 		};
+		B44518C628722052006F5F0D /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.47.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1896,6 +1908,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B404F4C2285AD13D008DCAE5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		B44518C728722053006F5F0D /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B44518C628722052006F5F0D /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
